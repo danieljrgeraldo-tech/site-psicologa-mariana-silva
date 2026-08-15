@@ -1,0 +1,100 @@
+---
+import { siteContent } from '../data/site-content.js';
+---
+
+<section id="abordagem" class="py-20 md:py-32 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Left Column: Approach Content (7 Cols) -->
+      <div class="lg:col-span-7 space-y-6" data-gsap="fade-right">
+        
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sage-100 border border-sage-200 text-emeraldTeal text-xs font-semibold uppercase tracking-wider">
+          <span>{siteContent.approach.badge}</span>
+        </div>
+
+        <!-- Title -->
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-emeraldDeep leading-tight">
+          {siteContent.approach.title}
+        </h2>
+
+        <div class="p-6 rounded-2xl bg-sandWarm border border-sandBorder text-emeraldDeep font-serif font-semibold text-xl">
+          {siteContent.approach.boldTitle}
+        </div>
+
+        <p class="text-base sm:text-lg text-sage-700 leading-relaxed">
+          {siteContent.approach.p1}
+        </p>
+
+        <p class="text-base sm:text-lg text-sage-700 leading-relaxed">
+          {siteContent.approach.p2}
+        </p>
+
+        <!-- Highlight Box -->
+        <div class="p-6 rounded-2xl bg-emeraldDeep text-sandLight space-y-3 shadow-luxury">
+          <div class="flex items-center gap-2 text-goldAccent font-serif italic text-lg">
+            <span>✨ Transformação Ativa</span>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-sage-100">
+            {siteContent.approach.highlightBox}
+          </p>
+        </div>
+
+        <div class="pt-4">
+          <a
+            href={siteContent.professional.whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-shimmer inline-flex items-center gap-3 px-8 py-4 rounded-full bg-emeraldDeep text-sandLight font-semibold text-sm uppercase tracking-wider hover:bg-emeraldTeal transition-all shadow-luxury"
+          >
+            <span>Agendar Primeira Sessão</span>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Video & Visual Highlight (5 Cols) -->
+      <div class="lg:col-span-5" data-gsap="zoom-in" data-gsap-delay="0.2">
+        <div class="relative rounded-3xl overflow-hidden glass-panel-dark p-8 text-sandLight shadow-2xl space-y-6">
+          
+          <div class="flex items-center justify-between">
+            <span class="text-xs uppercase tracking-widest text-goldAccent font-accent font-semibold">Explicativo da Abordagem</span>
+            <span class="w-3 h-3 rounded-full bg-goldAccent animate-ping"></span>
+          </div>
+
+          <!-- Video Thumbnail Placeholder & Play Modal Trigger -->
+          <div class="relative rounded-2xl overflow-hidden aspect-video bg-emeraldTeal/60 border border-sage-500/30 flex items-center justify-center group cursor-pointer shadow-inner">
+            <div class="w-16 h-16 rounded-full bg-goldAccent text-emeraldDeep flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-glow-gold">
+              <svg class="w-8 h-8 fill-current ml-1" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+            <div class="absolute bottom-4 left-4 right-4 text-center">
+              <p class="text-xs font-semibold text-sandLight uppercase tracking-wider">Saiba Mais Sobre o Tratamento</p>
+            </div>
+          </div>
+
+          <div class="space-y-3 pt-2 text-xs text-sage-200">
+            <div class="flex items-center gap-2">
+              <span class="text-goldAccent">✓</span>
+              <span>Comprovação Científica Internacional</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-goldAccent">✓</span>
+              <span>Foco na Resolução de Conflitos Atuais</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-goldAccent">✓</span>
+              <span>Exercícios Práticos para o Dia a Dia</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

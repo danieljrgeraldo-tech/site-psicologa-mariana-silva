@@ -1,0 +1,37 @@
+---
+---
+
+<div id="site-preloader" class="fixed inset-0 z-[100000] bg-emeraldDeep flex flex-col items-center justify-center transition-opacity duration-700 pointer-events-auto">
+  <div class="relative flex items-center justify-center">
+    <!-- Breathing Rings -->
+    <div class="w-24 h-24 rounded-full border-2 border-goldAccent/30 animate-ping absolute"></div>
+    <div class="w-20 h-20 rounded-full border border-sage-300/40 animate-pulse-slow absolute"></div>
+    
+    <!-- Central Symbol -->
+    <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-goldAccent to-goldLight flex items-center justify-center shadow-glow-gold animate-breathe">
+      <svg class="w-6 h-6 text-emeraldDeep" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+      </svg>
+    </div>
+  </div>
+
+  <div class="mt-8 text-center">
+    <p class="font-serif text-xl tracking-wider text-sandLight">Dra. Mariana Silva</p>
+    <p class="text-xs uppercase tracking-widest text-goldAccent font-accent mt-1">Psicologia Clínica • TCC</p>
+  </div>
+</div>
+
+<script is:inline>
+  window.addEventListener('load', () => {
+    const preloader = document.getElementById('site-preloader');
+    if (preloader) {
+      setTimeout(() => {
+        preloader.style.opacity = '0';
+        preloader.style.pointerEvents = 'none';
+        setTimeout(() => {
+          preloader.style.display = 'none';
+        }, 700);
+      }, 500);
+    }
+  });
+</script>

@@ -1,0 +1,91 @@
+---
+import { siteContent } from '../data/site-content.js';
+---
+
+<section id="faq" class="py-20 md:py-32 bg-sandWarm/50 relative border-y border-sandBorder">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-2xl mx-auto mb-16 space-y-4" data-gsap="fade-up">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-goldAccent/10 border border-goldAccent/30 text-goldAccent text-xs font-semibold uppercase tracking-wider">
+        <span>{siteContent.faq.badge}</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-emeraldDeep leading-tight">
+        {siteContent.faq.title}
+      </h2>
+      <p class="text-base sm:text-lg text-sage-600">
+        {siteContent.faq.subtitle}
+      </p>
+    </div>
+
+    <!-- Accordion Items Container -->
+    <div class="space-y-4" data-gsap="fade-up">
+      {siteContent.faq.items.map((item, index) => (
+        <div class="faq-accordion-item rounded-2xl glass-card overflow-hidden transition-all duration-300">
+          <button
+            class="faq-toggle-btn w-full p-6 text-left flex items-center justify-between gap-4 font-serif font-bold text-emeraldDeep text-lg sm:text-xl hover:text-goldAccent transition-colors focus:outline-none"
+            aria-expanded="false"
+          >
+            <span>{item.question}</span>
+            <div class="w-8 h-8 rounded-full bg-emeraldDeep/10 text-emeraldDeep flex items-center justify-center shrink-0 transition-transform duration-300 faq-icon">
+              +
+            </div>
+          </button>
+
+          <div class="faq-content hidden px-6 pb-6 text-sage-700 text-base leading-relaxed border-t border-sandBorder/40 pt-4">
+            <p>{item.answer}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom Action CTA -->
+    <div class="mt-12 text-center" data-gsap="fade-up">
+      <p class="text-sm text-sage-600 mb-4">Ainda tem alguma dúvida? Fale diretamente comigo:</p>
+      <a
+        href={siteContent.professional.whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-shimmer inline-flex items-center gap-3 px-8 py-4 rounded-full bg-emeraldDeep text-sandLight font-semibold text-sm uppercase tracking-wider hover:bg-emeraldTeal transition-all shadow-luxury"
+      >
+        <span>Tirar Dúvidas no WhatsApp</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const items = document.querySelectorAll('.faq-accordion-item');
+    items.forEach((item) => {
+      const btn = item.querySelector('.faq-toggle-btn');
+      const content = item.querySelector('.faq-content');
+      const icon = item.querySelector('.faq-icon');
+
+      if (btn && content && icon) {
+        btn.addEventListener('click', () => {
+          const isOpen = !content.classList.contains('hidden');
+          
+          // Close all other items
+          items.forEach((other) => {
+            other.querySelector('.faq-content')?.classList.add('hidden');
+            other.querySelector('.faq-icon')?.classList.remove('rotate-45');
+            other.querySelector('.faq-toggle-btn')?.setAttribute('aria-expanded', 'false');
+          });
+
+          // Toggle current item
+          if (!isOpen) {
+            content.classList.remove('hidden');
+            icon.innerText = '×';
+            icon.classList.add('rotate-45');
+            btn.setAttribute('aria-expanded', 'true');
+          } else {
+            icon.innerText = '+';
+            icon.classList.remove('rotate-45');
+          }
+        });
+      }
+    });
+  });
+</script>

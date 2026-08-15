@@ -1,0 +1,55 @@
+---
+import { siteContent } from '../data/site-content.js';
+---
+
+<section class="py-16 md:py-24 bg-sandWarm/50 relative overflow-hidden border-y border-sandBorder">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10" data-gsap="zoom-in">
+    
+    <!-- Badge -->
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-goldAccent/10 border border-goldAccent/30 text-goldAccent text-xs font-semibold uppercase tracking-wider mb-6">
+      <span>{siteContent.empathy.badge}</span>
+    </div>
+
+    <!-- Title -->
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-emeraldDeep leading-tight max-w-3xl mx-auto mb-8">
+      {siteContent.empathy.title}
+    </h2>
+
+    <!-- Card Narrative Container -->
+    <div class="p-8 sm:p-12 rounded-3xl glass-card text-left space-y-6 relative shadow-luxury">
+      <!-- Quote Graphic Decorative Icon -->
+      <div class="absolute top-6 right-8 text-goldAccent/15 font-serif text-8xl leading-none pointer-events-none select-none">
+        “
+      </div>
+
+      <p class="text-lg sm:text-xl text-sage-800 font-medium leading-relaxed">
+        {siteContent.empathy.p1}
+      </p>
+
+      <p class="text-base sm:text-lg text-sage-700 leading-relaxed">
+        {siteContent.empathy.p2}
+      </p>
+
+      <div class="pt-4 border-t border-sandBorder">
+        <p class="font-serif font-semibold text-emeraldDeep text-lg sm:text-xl italic">
+          {siteContent.empathy.highlight}
+        </p>
+      </div>
+
+      <div class="pt-4 text-center sm:text-left">
+        <a
+          href={siteContent.professional.whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-3 px-6 py-3.5 rounded-full bg-emeraldDeep text-sandLight text-xs uppercase tracking-wider font-semibold hover:bg-emeraldTeal transition-all shadow-md"
+        >
+          <span>Falar com a Dra. Mariana</span>
+          <svg class="w-4 h-4 text-goldAccent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>

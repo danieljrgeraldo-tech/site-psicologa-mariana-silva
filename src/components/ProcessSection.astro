@@ -1,0 +1,74 @@
+---
+import { siteContent } from '../data/site-content.js';
+---
+
+<section id="meu-trabalho" class="py-20 md:py-32 bg-sandWarm/60 relative overflow-hidden border-y border-sandBorder">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-20 space-y-4" data-gsap="fade-up">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-goldAccent/10 border border-goldAccent/30 text-goldAccent text-xs font-semibold uppercase tracking-wider">
+        <span>{siteContent.process.badge}</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-emeraldDeep leading-tight">
+        {siteContent.process.title}
+      </h2>
+      <p class="text-base sm:text-lg text-sage-600">
+        {siteContent.process.subtitle}
+      </p>
+    </div>
+
+    <!-- 4 Steps Timeline Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+      
+      {siteContent.process.steps.map((step, index) => (
+        <div
+          class="glass-card p-8 rounded-3xl relative flex flex-col justify-between group hover:border-goldAccent/50 transition-all duration-300"
+          data-gsap="fade-up"
+          data-gsap-delay={0.15 * index}
+        >
+          <div>
+            <!-- Step Number Pill -->
+            <div class="flex items-center justify-between mb-6">
+              <span class="w-12 h-12 rounded-2xl bg-emeraldDeep text-goldAccent font-serif text-xl font-bold flex items-center justify-center shadow-md">
+                {step.step}
+              </span>
+              <span class="text-xs uppercase tracking-widest text-sage-600 font-accent font-semibold">
+                Etapa {index + 1}
+              </span>
+            </div>
+
+            <!-- Step Title -->
+            <h3 class="text-xl font-serif font-bold text-emeraldDeep mb-4 group-hover:text-goldAccent transition-colors">
+              {step.title}
+            </h3>
+
+            <!-- Step Description -->
+            <p class="text-sm text-sage-700 leading-relaxed">
+              {step.description}
+            </p>
+          </div>
+
+          <div class="mt-8 pt-4 border-t border-sandBorder flex items-center gap-2 text-xs font-medium text-sage-600">
+            <span class="w-2 h-2 rounded-full bg-goldAccent"></span>
+            <span>Respeito ao seu ritmo</span>
+          </div>
+        </div>
+      ))}
+
+    </div>
+
+    <!-- Bottom Action CTA -->
+    <div class="mt-16 text-center" data-gsap="fade-up">
+      <a
+        href={siteContent.professional.whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-shimmer inline-flex items-center gap-3 px-8 py-4 rounded-full bg-emeraldDeep text-sandLight font-semibold text-sm uppercase tracking-wider hover:bg-emeraldTeal transition-all shadow-luxury"
+      >
+        <span>Iniciar Minha Jornada Terapêutica</span>
+      </a>
+    </div>
+
+  </div>
+</section>
